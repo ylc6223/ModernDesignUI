@@ -17,9 +17,11 @@
                     <GradientStop Color="#3aa0ff" Offset="1"></GradientStop>
                 </LinearGradientBrush>   
             </Border.Background>
+             
             <Border.Clip>
                 <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,200"></RectangleGeometry>
             </Border.Clip>
+            
             <Grid>
                 <StackPanel>
                     <TextBlock Text="World leader&#x0a;in global finance" Foreground="White" FontSize="28" Margin="20,10,10,0"></TextBlock>

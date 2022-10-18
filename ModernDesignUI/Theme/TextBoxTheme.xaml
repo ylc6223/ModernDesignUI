@@ -5,7 +5,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border CornerRadius="10" Background="#353340" Width="200" Height="40">
-                        <Grid>
+                          <Grid>
                             <Rectangle StrokeThickness="1"></Rectangle>
                             <TextBox Margin="1" Text="{TemplateBinding Text}" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" Padding="5" Foreground="#CECECE" x:Name="SearchBox"></TextBox>
                             <!--  IsHitTestVisible输入的时候是否显示 placeholder -->

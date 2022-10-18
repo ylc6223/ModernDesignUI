@@ -11,7 +11,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         >
-    <Border Background="#272537" CornerRadius="20">
+    <Border Background="#0984e3" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"></ColumnDefinition>
@@ -21,8 +21,11 @@
                 <RowDefinition Height="75"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
+            <!-- 定义Logo栏 -->
             <TextBlock Text="Logo" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="22" Margin="20,0,0,0"></TextBlock>
+            <!-- 定义侧边栏菜单 -->
             <StackPanel Grid.Row="1">
+                <!-- 自定义按钮的样式进行复用 -->
                 <RadioButton Height="50" Content="Home" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>
                 <RadioButton Height="50" Content="discovery" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>
                 <RadioButton Height="50" Content="featured" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>

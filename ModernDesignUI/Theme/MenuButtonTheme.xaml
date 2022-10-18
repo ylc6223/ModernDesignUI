@@ -3,6 +3,7 @@
     <!-- 自定义控件模板 -->
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="{x:Type RadioButton}" x:Key="MenuButtonTheme">
         <Style.Setters>
+            <!-- 设置按钮的多个属性 因此要使用复数setters -->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
@@ -16,6 +17,7 @@
             <Setter Property="BorderThickness" Value="0"></Setter>
         </Style.Setters>
         <Style.Triggers>
+            <!-- 激活时候的背景颜色 -->
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="#22202f"></Setter>
             </Trigger>
