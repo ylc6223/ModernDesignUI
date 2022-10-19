@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernDesignUI"
+        xmlns:viewModel="clr-namespace:ModernDesignUI.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="920"
         WindowStyle="None"
@@ -11,6 +12,10 @@
         Background="Transparent"
         AllowsTransparency="True"
         >
+    <!-- WindowStyle="None" -->
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     <Border Background="#0984e3" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -22,17 +27,17 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <!-- 定义Logo栏 -->
-            <TextBlock Text="Logo" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="22" Margin="20,0,0,0"></TextBlock>
+            <TextBlock Text="益华数字" FontFamily="/Fonts/#NotoSansSC-Regular" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="22" Margin="20,0,0,0"></TextBlock>
             <!-- 定义侧边栏菜单 -->
             <StackPanel Grid.Row="1">
                 <!-- 自定义按钮的样式进行复用 -->
-                <RadioButton Height="50" Content="Home" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>
-                <RadioButton Height="50" Content="discovery" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>
+                <RadioButton IsChecked="True" Command="{Binding HomeViewCommand}" Height="50" Content="Home" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>
+                <RadioButton Command="{Binding DiscoveryViewCommand}" Height="50" Content="discovery" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>
                 <RadioButton Height="50" Content="featured" Foreground="White" FontSize="14" Style="{StaticResource MenuButtonTheme}"></RadioButton>
             </StackPanel>
             <!-- searchbox -->
             <TextBox  Grid.Column="1" Width="250" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="5" Style="{StaticResource ModernTextBox}"></TextBox>
-            <ContentControl Grid.Column="1" Grid.Row="1" Margin="10"></ContentControl>
+            <ContentControl Grid.Column="1" Grid.Row="1" Margin="10" Content="{Binding CurrentView }"></ContentControl>
         </Grid>
     </Border>
 </Window>
